@@ -1,21 +1,27 @@
-<html>
 <!DOCTYPE html>
+<html>
 <head>
+  <meta charset="utf-8">
+  <!-- Esta línea ajusta la pantalla del celular sin estirar el lienzo 3D -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.1/dist/aframe-master.min.js"></script>
 </head>
 <body>
   <a-scene>
-    <!-- Carga del modelo desde la carpeta models -->
+    <!-- Carga del modelo 3D -->
     <a-assets>
       <a-asset-item id="modeloIndustrial" src="models/helicopter.glb"></a-asset-item>
     </a-assets>
+
+    <!-- Cámara explícita para evitar que el teléfono deforme la perspectiva -->
+    <a-entity camera position="0 1.6 0" look-controls fov="60"></a-entity>
 
     <!-- Piso y cielo -->
     <a-plane rotation="-90 0 0" width="15" height="15" color="#A9A9A9"></a-plane>
     <a-sky color="#ECECEC"></a-sky>
 
-    <!-- Modelo con escala reducida a 0.015 -->
-    <a-entity gltf-model="#modeloIndustrial" position="0 0.3 -2" scale="0.015 0.015 0.015"></a-entity>
+    <!-- Modelo en posición y escala proporcional sin distorsión -->
+    <a-entity gltf-model="#modeloIndustrial" position="0 0.5 -3" scale="0.02 0.02 0.02"></a-entity>
     
   </a-scene>
 </body>
