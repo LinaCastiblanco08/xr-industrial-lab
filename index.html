@@ -5,17 +5,17 @@
 </head>
 <body>
   <a-scene>
-    <!-- Cargamos el modelo 3D -->
+    <!-- Carga del modelo desde la carpeta models -->
     <a-assets>
       <a-asset-item id="modeloIndustrial" src="models/helicopter.glb"></a-asset-item>
     </a-assets>
 
-    <!-- Piso y Cielo -->
+    <!-- Piso y cielo -->
     <a-plane rotation="-90 0 0" width="15" height="15" color="#A9A9A9"></a-plane>
     <a-sky color="#ECECEC"></a-sky>
 
-    <!-- Modelo centrado, más cerca y con tamaño moderado -->
-    <a-entity gltf-model="#modeloIndustrial" position="0 0.3 -2" scale="0.035 0.035 0.035"></a-entity>
+    <!-- Modelo con posición y escala equilibradas para PC y celular -->
+    <a-entity gltf-model="#modeloIndustrial" position="0 0.4 -2" scale="0.03 0.03 0.03"></a-entity>
     
   </a-scene>
 </body>
