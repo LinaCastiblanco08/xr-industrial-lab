@@ -1,36 +1,21 @@
-<!DOCTYPE html>
 <html>
+<!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Escena VR Helicóptero</title>
   <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.1/dist/aframe-master.min.js"></script>
 </head>
 <body>
   <a-scene>
-    <!-- Carga del modelo 3D -->
+    <!-- Cargamos el modelo 3D -->
     <a-assets>
       <a-asset-item id="modeloIndustrial" src="models/helicopter.glb"></a-asset-item>
     </a-assets>
 
-    <!-- CONFIGURACIÓN DE CÁMARA FIX: Se agregaron planos de corte (near: 0.001) -->
-    <!-- Esto le permite a la cámara ver objetos casi pegados al lente sin cortarlos -->
-    <a-entity 
-      camera="near: 0.001; far: 1000; fov: 60" 
-      position="0 1.6 0" 
-      look-controls>
-    </a-entity>
-
-    <!-- Piso y cielo -->
+    <!-- Piso y Cielo -->
     <a-plane rotation="-90 0 0" width="15" height="15" color="#A9A9A9"></a-plane>
     <a-sky color="#ECECEC"></a-sky>
 
-    <!-- Modelo colocado en una posición y escala seguras -->
-    <a-entity 
-      gltf-model="#modeloIndustrial" 
-      position="0 0.5 -3" 
-      scale="0.02 0.02 0.02">
-    </a-entity>
+    <!-- Modelo centrado, más cerca y con tamaño moderado -->
+    <a-entity gltf-model="#modeloIndustrial" position="0 0.5 -1" scale="0.01 0.01 0.01"></a-entity>
     
   </a-scene>
 </body>
